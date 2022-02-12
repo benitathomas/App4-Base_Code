@@ -144,9 +144,24 @@ blah, blah, blah, blah
 	
 	<div class="page" id="four">
 	<h1>Final Result</h1>
-		<img src="img_girl.jpg" alt="Diagram of thyroid">
-		<a href="#six"  onclick="results();" class="w3-btn w3-red w3-round-xxlarge"> Show Results </a> 
-		<!--when button is clicked, results fuction runs and displays results on page six-->
+	<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTML Image as link</title>
+   </head>
+   <body>
+      The following image works as a link:<br>
+      <a href="https://thumbs.dreamstime.com/z/comparison-difference-hyperthyroidism-hypothyroidism-thyroid-gland-disorder-comparison-difference-211675422.jpg">
+         <img alt="Thyroid Symptoms" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fcomparison-difference-hyperthyroidism-hypothyroidism-thyroid-gland-disorder-comparison-difference-image211675422&psig=AOvVaw0Ip1-SY0wt4HDemEYqIRCE&ust=1644785087010000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCS_omE-_UCFQAAAAAdAAAAABAI"
+         width="90" height="90">
+      </a>
+
+	
+</style>
+ 
+
+	<a href="#six"  onclick="results();" class="w3-btn w3-red w3-round-xxlarge"> Show Results </a> 
+	<!--when button is clicked, results fuction runs and displays results on page six-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
