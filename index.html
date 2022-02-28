@@ -34,13 +34,13 @@ blah, blah, blah, blah
 
 
 <script>
-        var hypothyroidism_count = 0;
-        var hyperthyroidism_count = 0;
+        var hypothyroidism_count = 0; //counter to measure hypothyroidism clicks
+	var hyperthyroidism_count = 0; //counter to measure hyperthyroidism clicks
 	
 	function percentages(){
 		var resultText = document.getElementById("results");  //used to return the results
-		var hypoPercent = (allergy_count/4)*100  //converts the allergy count into a percentage
-		var hyperPercent = (cold_count/4)*100  //converts the cold count into a percentage
+		var hypoPercent = (hypothyroidism_count/4)*100  //converts the hypothyroidism count into a percentage
+		var hyperPercent = (hyperthyroidism_count/4)*100  //converts the hyperthyroidism count into a percentage
 		resultText.innerHTML = "Probability it is hypothyroidism =" + hypoPercent + "%" + "<br> Probability it is hyperthyroidism =" + hyperPercent + "%"  /*when referenced, it
 		prints the statement and substitutes percent variables */
 		
