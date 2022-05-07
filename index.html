@@ -25,7 +25,7 @@ None.
 
    <head> 
       
-	     <title>Hello World</title>  
+	   <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,27 +34,30 @@ None.
 
 
 <script>
-        var hypothyroidism_count = 0; //counter to measure hypothyroidism clicks
-	var hyperthyroidism_count = 0; //counter to measure hyperthyroidism clicks
+        var multiple_count = 0;  //counter to measure MS clicks
+        var fibro_count = 0;  //counter to measure fibromyalgia clicks
+	var docMod = document.lastModified;
+        alert("This file last modified  " + docMod);
+        console.log("This file last modified  " + docMod);
+
+
 	
+
 	function percentages(){
 		var resultText = document.getElementById("results");  //used to return the results
-		var hypoPercent = (hypothyroidism_count/4)*100  //converts the hypothyroidism count into a percentage
-		var hyperPercent = (hyperthyroidism_count/4)*100  //converts the hyperthyroidism count into a percentage
-		resultText.innerHTML = "Probability it is hypothyroidism =" + hypoPercent + "%" + "<br> Probability it is hyperthyroidism =" + hyperPercent + "%"  /*when referenced, it
+		var multiplePercent = (multiple_count/4)*100  //converts the MS count into a percentage
+		var fibroPercent = (fibro_count/4)*100  //converts the fibromyalgia count into a percentage
+		resultText.innerHTML = "Probability it is multiple sclerosis =" + multiplePercent + "%" + "<br> Probability it is a fibromyalgia =" + fibroPercent + "%"  /*when referenced, it
 		prints the statement and substitutes percent variables */
-		
 	}
-
-
-        function hypothyroidismAdd(){
-            hypothyroidism_count = hypothyroidism_count + 1;
-		(hypothyroidism_count);          <!--remved the word "alert" so a pop up box doesn't come up-->
+		
+        function multipleAdd(){
+            multiple_count = multiple_count + 1;  //function that adds 1 to the MS count value when called on
 
         }
 
-        function hyperthyroidismAdd(){
-            hypoerthyroidism_count = hyperthyroidism_count + 1;
+        function fibroAdd(){
+            fibro_count = fibro_count + 1;  //function that adds 1 to the fibromyalgia count value when callled on
         }
 
   </script>
@@ -81,107 +84,96 @@ None.
     left: 0vw;
     z-index: 1;
 }
+   img, object{
+     max-height:90%;
+     max-width:90%;
+}
+
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Hyper- or Hypo- Thyroidism?</h1>
+	<h1>Multiple Sclerosis or Fibromyalgia?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling a change in energy and fluctuating with weight and metabolism?. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might have fibromyalgia but wonder if it is multiple sclerosis? Answer a few short questions to find out!</p>
+	<img src="http://creakyjoints.org//wp-content/uploads/0819_Multiple_Sclerosis_vs_Fibromyalgia.jpg" alt="Multiple Sclerosis vs Fibromyalgia">
 	
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>  <!-- directs to page one once button is pressed -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	
-	
-	  <!--go to next page and ask first question-->
 
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot">   <!--shape and color of the header-->
-		<h1>Question 1</h1>
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- formatting the style of the header --> 
+		<h1>Question 1</h1>  <!-- prints the text for the header --> 
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are you experiencing rapid weight gain?</p>    <!--displays question-->
-		<a href="#two"  onclick="hypothyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">Yes</a> 
-	    <!--codes for button shape (rounded edges) and color (red); <!--adds to hypothyroidism if yes is clicked and one to hyperthyroidism if no is clicked-->
-		<a href="#two"  onclick="hyperthyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">No</a>
-    	</div>
+	<p>Do you have trouble with coordination or balance?</p>   <!-- prints the question to the user -->
+	<a href="#two"  onclick="multipleAdd();" class="w3-btn w3-black"> Yes</a>  <!-- when clicked, adds to the MS count and then directs to next page --> 
+        <a href="#two"  onclick="fibroAdd();" class="w3-btn w3-black">No</a>  <!-- when clicked, adds to the fibromyalgia count and then directs to next page --> 
+	</div><!-- /content -->
+
 </div>
 
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
+		<h1>Question 2</h1>  <!-- prints the text for the header --> 
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sudden burst of energy?</p>     <!--displays question-->
-		<a href="#three"  onclick="hypothyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">No</a> 
-	    <!--codes for button shape (rounded edges) and color (red); <!--adds to hyperthyroidism if yes is clicked and one to hypothyroidism if no is clicked-->
-		<a href="#three"  onclick="hyperthyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">Yes</a>
-	</div>
-
+	<p>Are you experiencing fatigue or exhaustion?</p>  <!-- prints the question to the user -->
+	<a href="#three"  onclick="fibroAdd();" class="w3-btn w3-black"> Yes</a>  <!-- when clicked, adds to the fibro count and then directs to next page --> 
+        <a href="#three"  onclick="multipleAdd();" class="w3-btn w3-black">No</a>  <!-- when clicked, adds to the MS count and then directs to next page --> 
+	</div><!-- /content -->
+	
+</div>
+	
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
+		<h1>Question 3</h1>  <!-- prints the text for the header --> 
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have an increased appetite?</p>     <!--displays question-->
-		<a href="#four"  onclick="hypothyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">No</a> 
-	    <!--codes for button shape (rounded edges) and color (red); <!--adds to hypothyroidism if yes is clicked and one to hyperthyroidism if no is clicked-->
-		<a href="#four"  onclick="hyperthyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">Yes</a>
-	</div>
+	<p>Do you notice a decrease in attention span and memory capacity?</p>  <!-- prints the question to the user -->    
+	<a href="#four"  onclick="fibroAdd();" class="w3-btn w3-black"> Yes</a>  <!-- when clicked, adds to the fibromyalgia count and then directs to next page --> 
+        <a href="#four"  onclick="multipleAdd();" class="w3-btn w3-black">No</a>  <!-- when clicked, adds to the MS count and then directs to next page --> 
+	</div><!-- /content -->
 	
+</div>	
+
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
+		<h1>Question 4</h1>  <!-- prints the text for the header --> 
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you more irritable and have anxiety?</p>     <!--displays question-->
-		<a href="#five"  onclick="hyperthyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">Yes</a> 
-	    <!--codes for button shape (rounded edges) and color (red); <!--adds to hypothyroidism if yes is clicked and one to hyperthyroidism if no is clicked-->
-		<a href="#five"  onclick="hypothyroidismAdd();" class="w3-btn w3-red w3-round-xxlarge">No</a>
-		
-<div class="page" id="five">		
+	<p>Do you have difficulties with vision?</p>  <!-- prints the question to the user -->    
+	<a href="#results"  onclick="multipleAdd();" class="w3-btn w3-black"> Yes</a>  <!-- when clicked, adds to the MS count and then directs to next page --> 
+        <a href="#results"  onclick="fibroAdd();" class="w3-btn w3-black">No</a>  <!-- when clicked, adds to the fibromyalgia count and then directs to next page --> 
+	</div><!-- /content -->
+	
+</div>	
+	
+<div class="page" id="results">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>  <!-- prints the text for the header --> 
 	</div>
-	<!--the final result-->
-	
-	<div class="page" id="five">
-	<h1>Final Result</h1>
-	<!DOCTYPE html>
-<html>
-   <head>
-      <title>HTML Image as link</title>
-   </head>
-   <body>
-	   </style>
- 
-	 </div>
 	<div id="content" class="w3-container">
+	<a onclick="percentages();" class="w3-btn w3-black"> Results</a>  <!-- when clicked, the percentages function begins to run -->    
+		<p id="results"></p>  <!-- prints the results to the user -->    
+	
 		
-		<a href="#six"  onclick="percentages();" class="w3-btn w3-blue w3-round-xxlarge"> Show Results </a> 
-		<!--when button is clicked, results fuction runs and displays results on page six-->
-		<p id="results"></p>   <!--prints final resultd-->
-
+	</div><!-- /content -->
 	
-<footer class="w3-bottom w3-container w3-flat-carrot">
-      The following image works as a link:<br>
-      <a href="https://thumbs.dreamstime.com/z/comparison-difference-hyperthyroidism-hypothyroidism-thyroid-gland-disorder-comparison-difference-211675422.jpg">
-         <img alt="Thyroid Symptoms" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fcomparison-difference-hyperthyroidism-hypothyroidism-thyroid-gland-disorder-comparison-difference-image211675422&psig=AOvVaw0Ip1-SY0wt4HDemEYqIRCE&ust=1644785087010000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMCS_omE-_UCFQAAAAAdAAAAABAI"
-         width="90" height="90">
-      </a>
+</div>	
 
-	
-
-	<p>DIY!</p>
+<footer class="w3-bottom w3-container w3-flat-carrot">  <!-- formatting for the footer -->    
+	<p>DIY!</p>  <!-- prints the text for the footer -->    
 </footer>
-
 	   
    </body>
 </html>
