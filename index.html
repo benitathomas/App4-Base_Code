@@ -45,19 +45,19 @@ None.
 
 	function percentages(){
 		var resultText = document.getElementById("results");  //used to return the results
-		var multiplePercent = (multiple_count/4)*100  //converts the MS count into a percentage
-		var fibroPercent = (fibro_count/4)*100  //converts the fibromyalgia count into a percentage
-		resultText.innerHTML = "Probability it is multiple sclerosis =" + multiplePercent + "%" + "<br> Probability it is a fibromyalgia =" + fibroPercent + "%"  /*when referenced, it
+		var hyperPercent = (hyper_count/4)*100  //converts the hyperthyroidism count into a percentage
+		var hypoPercent = (hypo_count/4)*100  //converts the hypothyroidism count into a percentage
+		resultText.innerHTML = "Probability it is hyperthyroidism =" + hyperPercent + "%" + "<br> Probability it is hypothyroidism =" + hypoPercent + "%"  /*when referenced, it
 		prints the statement and substitutes percent variables */
 	}
 		
-        function multipleAdd(){
-            multiple_count = multiple_count + 1;  //function that adds 1 to the MS count value when called on
+        function hyperAdd(){
+            hyper_count = hyper_count + 1;  //function that adds 1 to the hyper count value when called on
 
         }
 
-        function fibroAdd(){
-            fibro_count = fibro_count + 1;  //function that adds 1 to the fibromyalgia count value when callled on
+        function hypoAdd(){
+            hypo_count = hypo_count + 1;  //function that adds 1 to the hypo count value when callled on
         }
 
   </script>
